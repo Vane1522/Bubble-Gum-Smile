@@ -166,9 +166,15 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 8rem;
+      overflow: hidden;
       box-shadow: 0 20px 60px rgba(244,114,182,.25), 0 0 0 24px rgba(244,114,182,.08);
       animation: float 3.6s ease-in-out infinite;
+    }
+    .bubble-ring img {
+      width: 90%;
+      height: 90%;
+      object-fit: contain;
+      border-radius: 50%;
     }
     @keyframes float {
       0%, 100% { transform: translateY(0); }
@@ -375,7 +381,7 @@
     @media (max-width: 760px) {
       .hero { grid-template-columns: 1fr; padding: 3rem 5vw 2.5rem; }
       .hero-visual { margin-top: 1.5rem; }
-      .bubble-ring { width: 240px; height: 240px; font-size: 5.5rem; }
+      .bubble-ring { width: 240px; height: 240px; }
       nav { padding: 1rem; }
     }
 
@@ -422,7 +428,26 @@
     </div>
 
     <div class="hero-visual">
-      <div class="bubble-ring">🦷</div>
+      <div class="bubble-ring">
+        <!--
+          =========================================================
+          INSTRUCCIONES PARA SUBIR TU IMAGEN A GITHUB
+          =========================================================
+          1. Coloca tu imagen en la misma carpeta que este index.html
+             con el nombre: producto.png  (o .jpg / .webp)
+          2. En GitHub Desktop o desde la web, haz commit de ambos archivos.
+          3. Si usas GitHub Pages, asegúrate de que la carpeta esté
+             publicada (Settings → Pages → Branch: main / root).
+          4. Si el nombre de tu imagen es diferente, cambia el "src"
+             de abajo: src="TU_NOMBRE_DE_IMAGEN.png"
+          =========================================================
+        -->
+        <img
+          src="producto.png"
+          alt="Bubble Gum Smile – producto"
+          onerror="this.style.display='none'; this.parentElement.innerHTML+='🦷';"
+        />
+      </div>
       <div class="badge-floating b1">🍬 Sin azúcar</div>
       <div class="badge-floating b2">💧 Hidroxiapatita</div>
       <div class="badge-floating b3">🌱 Eco-friendly</div>
